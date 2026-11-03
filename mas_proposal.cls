@@ -99,6 +99,7 @@ not set. Please fix this.}
 
 % Colors
 \definecolor{hbrs}{RGB}{1,106,186}
+\definecolor{unibremen}{HTML}{D50B2E} % Red of the Universit\"at Bremen logo
 
 \definecolor{keywords}{RGB}{0,100,0}
 \definecolor{comments}{RGB}{0,100,50}
@@ -114,11 +115,11 @@ not set. Please fix this.}
 
 \begin{minipage}{0.475\textwidth}
     \centering
-	\includegraphics[height=1.3cm]{images/Logo-HBRS-cyan.png}
+	\includegraphics[height=1.5cm]{images/UniBremen_Logo.png}
 \end{minipage}
 \begin{minipage}{0.475\textwidth}
     \centering
-    \includegraphics[height=1.3cm]{images/b-it.pdf}
+    \includegraphics[height=1.5cm]{images/secoro-logo-horizontal-v2.png}
 \end{minipage}
 \ifx\@thirdpartylogo\@empty
   \relax
@@ -255,6 +256,8 @@ Supervised by\par
 \sectionfont{\color{black}}
 \subsectionfont{\color{black}}
 \subsubsectionfont{\color{black}}
+
+\usepackage[bookmarksnumbered,bookmarksopen,hidelinks]{hyperref} % PDF bookmarks (viewer outline) and links; load last
 
 % \titleformat{\section}
 %   [block]

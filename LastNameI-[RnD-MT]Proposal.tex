@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{pgfgantt} % Gantt charts
 
 \title{Project Proposal Title}
 \author{First Name Last Name}
@@ -29,12 +30,6 @@
     \item Reflect on the profile of the reader and PLEAAAASE, tell a story here and refrain from bombarding the readers with details which they may not be able to appreciate.
 \end{itemize}
 
-\subsection{Relevance of This R\&D Project}
-\begin{itemize}
-    \item Who will benefit from the results of this R\&D project?
-    \item What are the benefits? Quantify the benefits with concrete numbers.
- \end{itemize}
-
 \section{Related Work}
 
 \subsection{Survey of Related Work}
@@ -50,7 +45,7 @@
     \item You should reference and briefly discuss at least the ``top twelve'' related works
 \end{itemize}
 
-\section{Problem Statement}
+\section{Research Questions}
 \begin{itemize}
     \item Which of the deficits are you going to solve?
     \item What is your intended approach?
@@ -86,9 +81,36 @@ Include a Gantt chart here. It doesn't have to be detailed, but it should includ
 Make sure to include the writing of your report throughout the whole project, not just at the end.
 
 \begin{figure}[h!]
-    \includegraphics[width=\textwidth]{images/rnd_deliverable_timeline}
-    \caption{My figure caption}
-    \label{fig:myfigure}
+    \centering
+    % One slot = half a month (16 slots = 8 months)
+    \begin{ganttchart}[
+        vgrid={*1{draw=black!12},*1{draw=black!30}},
+        hgrid={*1{draw=black!12}},
+        x unit=0.58cm, y unit title=0.55cm, y unit chart=0.5cm,
+        title height=1,
+        title/.append style={fill=black!8},
+        bar/.append style={draw=unibremen, fill=unibremen!30},
+        bar height=0.55,
+        milestone/.append style={draw=unibremen, fill=unibremen},
+        bar label font=\small,
+        milestone label font=\small\itshape,
+      ]{1}{16}
+      \gantttitlelist{1,...,8}{2} \\
+      \ganttbar{Literature search}{1}{4} \\
+      \ganttmilestone{List of $\geq$50 references}{4} \\
+      \ganttbar{Literature analysis}{5}{8} \\
+      \ganttmilestone{Experimental setup familiar}{6} \\
+      \ganttmilestone{State-of-the-art analysis}{8} \\
+      \ganttbar{Experimental design}{9}{10} \\
+      \ganttmilestone{Outline + hypothesis}{10} \\
+      \ganttbar{Experiments / model testing}{11}{14} \\
+      \ganttbar{Report writing}{1}{16} \\
+      \ganttmilestone{Initial report draft}{13} \\
+      \ganttmilestone{Final report draft}{15} \\
+      \ganttmilestone{Submission}{16}
+    \end{ganttchart}
+    \caption{Project schedule (months)}
+    \label{fig:schedule}
 \end{figure}
 
 \subsection{Deliverables}
