@@ -1,12 +1,9 @@
 \documentclass[master]{thesis_proposal}
 % \documentclass[bachelor]{thesis_proposal}
 
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
 \usepackage{pgfgantt} % Gantt charts
+
+\addbibresource{bibliography.bib} % Use the bibliography.bib file as the source of references
 
 \title{Thesis Proposal Title}
 \author{First Name Last Name}
@@ -35,6 +32,7 @@
 \subsection{Survey of Related Work}
 \begin{itemize}
     \item What have other people done to solve the problem?
+    \item Cite related work with \verb|\cite|, e.g.~\cite{art1}. Only cited works appear in the references.
     \item You should reference and briefly discuss at least the ``top twelve'' related works
 \end{itemize}
 
@@ -132,9 +130,6 @@ Make sure to include the writing of your thesis throughout the whole schedule, n
 
 Please note that the final grade will not only depend on the results obtained in your work, but also on how you present the results.
 
-\nocite{*}
-
-\bibliographystyle{plainnat} % Use the plainnat bibliography style
-\bibliography{bibliography.bib} % Use the bibliography.bib file as the source of references
+\printbibliography
 
 \end{document}
