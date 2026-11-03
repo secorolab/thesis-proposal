@@ -1,4 +1,7 @@
-# MAS project proposal [![Build Status](https://travis-ci.org/mas-group/project-proposal.svg?branch=master)](https://travis-ci.org/mas-group/project-proposal)
+# SECORO thesis proposal
 
+LaTeX template for bachelor and master thesis proposals at SECORO, University of Bremen.
 
-Please make sure to change name of the file to match the naming convention, e.g. `DoeJ-RnDProposal.tex`
+Select the thesis type via the class option, `\documentclass[master]{thesis_proposal}` or `\documentclass[bachelor]{thesis_proposal}`.
+
+Please make sure to change name of the file to match the naming convention, e.g. `DoeJ-ThesisProposal.tex`

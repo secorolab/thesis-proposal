@@ -1,33 +1,32 @@
 %
-% LaTeX2e Style for MAS R&D and master thesis reports
-% Author: Argentina Ortega Sainz, Hochschule Bonn-Rhein-Sieg, Germany
+% LaTeX2e class for bachelor and master thesis proposals
+% SECORO, University of Bremen, Germany
 % Please feel free to send issues, suggestions or pull requests to:
-% https://github.com/mas-group/report-template
-% Based on the template created by Ronni Hartanto in 2003
+% https://github.com/secorolab/thesis-proposal
+% Based on the template by Argentina Ortega Sainz and Ronni Hartanto
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mas_proposal}[2018/01/25 The MAS report class]
+\ProvidesClass{thesis_proposal}[2026/11/03 The SECORO thesis proposal class]
 
-% \newcommand{\test}{Project test!}
 \RequirePackage{xcolor}
 \RequirePackage{ifthen}
 \definecolor{slcolor}{HTML}{882B21}
-\newcommand*{\project}[1]{\gdef\@project{#1}%
+\newcommand*{\proposaltype}[1]{\gdef\@proposaltype{#1}%
 }
-\newcommand*{\@project}{\texttt{project} not set. Please select Master Thesis or R\&D Project}
+\newcommand*{\@proposaltype}{\texttt{\string\proposaltype} not set. Please select the bachelor or master option}
 
 
 % Options
 \DeclareOption{onecolumn}{\OptionNotUsed}
-\DeclareOption{thesis}{\project{Master Thesis Proposal}}
-\DeclareOption{rnd}{\project{R\&D Project Proposal}}
+\DeclareOption{master}{\proposaltype{Master Thesis Proposal}}
+\DeclareOption{bachelor}{\proposaltype{Bachelor Thesis Proposal}}
 
 % Report options
 % \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 
 % Execute the default option
-\ExecuteOptions{thesis}
+\ExecuteOptions{master}
 
 % Process other options
 \ProcessOptions\relax
@@ -98,7 +97,6 @@
 not set. Please fix this.}
 
 % Colors
-\definecolor{hbrs}{RGB}{1,106,186}
 \definecolor{unibremen}{HTML}{D50B2E} % Red of the Universit\"at Bremen logo
 
 \definecolor{keywords}{RGB}{0,100,0}
@@ -137,7 +135,7 @@ not set. Please fix this.}
 \vfill
 \centering
 \vspace{1.5cm}
-{\Large\@project\unskip\strut\par}
+{\Large\@proposaltype\unskip\strut\par}
 \vspace{1.5cm}
 {\huge\bfseries\@title\unskip\strut\par}
 \vspace{2cm}
@@ -198,7 +196,7 @@ Supervised by\par
     \fancyfoot[L]{\color{darkgray}\footnotesize\@author}
     \fancyhead[C]{\color{darkgray}\footnotesize\@title}
     \fancyfoot[C]{\color{darkgray}\footnotesize\thepage}
-    \fancyfoot[R]{\color{darkgray}\footnotesize\@project}
+    \fancyfoot[R]{\color{darkgray}\footnotesize\@proposaltype}
 }
 
 %% Fancy style for the main matter.
@@ -216,9 +214,9 @@ Supervised by\par
 %% The mainmatter style is default for normal pages.
 %\pagestyle{mainmatter}
 
-%% Print the current chapter and section at the top of the page in cyan.
-% \renewcommand*\chaptermark[1]{\markboth{\textcolor{hbrs} {\thechapter.\ } #1}{}}
-% \renewcommand*\sectionmark[1]{\markright{\textcolor{hbrs}{\thesection.\ } #1}}
+%% Print the current chapter and section at the top of the page in Uni Bremen red.
+% \renewcommand*\chaptermark[1]{\markboth{\textcolor{unibremen}{\thechapter.\ } #1}{}}
+% \renewcommand*\sectionmark[1]{\markright{\textcolor{unibremen}{\thesection.\ } #1}}
 
 %% Chapter titles have the same layout as parts.
 % \titleformat{\chapter}
